@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { TimelineView } from "@/app/components/TimelineView";
-// import { Chrono } from "react-chrono";
+import React from "react";
+import {TimelineView} from "@/app/components/TimelineView";
 
 const items = [
   {

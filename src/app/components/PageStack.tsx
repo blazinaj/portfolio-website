@@ -1,11 +1,11 @@
 "use client";
 
-import { Box, Stack } from "@mui/system";
+import {Stack} from "@mui/system";
 import React from "react";
-import { PageSection } from "./PageSection";
-import { PageSection_T } from "../types/PageSection";
-import { NavigationLinkGrid } from "@/app/components/NavigationLinkGrid";
-import { Grid } from "@mui/material";
+import {PageSection} from "./PageSection";
+import {PageSection_T} from "../types/PageSection";
+import {NavigationLinkGrid} from "@/app/components/NavigationLinkGrid";
+import {Grid} from "@mui/material";
 
 interface PageStackProps {
   homeSection: React.ReactElement;
