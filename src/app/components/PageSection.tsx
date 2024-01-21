@@ -39,7 +39,7 @@ export const PageSection = ({
     if (isVisible) {
       visibilityCallback(id, isVisible);
     }
-  }, [isVisible]);
+  }, [isVisible, id, visibilityCallback]);
 
   return (
     <div

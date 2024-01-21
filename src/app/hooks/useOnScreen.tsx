@@ -13,14 +13,14 @@ export const useOnScreen = (ref: RefObject<HTMLElement>) => {
       new IntersectionObserver(([entry]) =>
         setIntersecting(entry.isIntersecting),
       ),
-    [ref],
+    [],
   );
 
   useEffect(() => {
     // @ts-ignore
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [observer, ref]);
 
   return isIntersecting;
 };

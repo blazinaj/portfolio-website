@@ -31,7 +31,7 @@ export const AboutHero = () => {
     if (isVisible) {
       visibilityCallback("about-hero", isVisible);
     }
-  }, [isVisible]);
+  }, [isVisible, visibilityCallback]);
 
   return (
     <div
@@ -60,7 +60,7 @@ export const AboutHero = () => {
         {/*Bio*/}
         <h1 className="about-hero__title">Jacob Blazina</h1>
         <p ref={ref} className="about-hero__subtitle">
-          I'm a software engineer with a passion for building things.
+          I`&apos;m a software engineer with a passion for building things.
         </p>
 
         {/*Social Links*/}
