@@ -1,6 +1,5 @@
 import React from "react";
 import { GridView } from "../components/GridView";
-import { Icon } from "@iconify/react";
 import SchoolIcon from "@mui/icons-material/School";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
@@ -19,11 +18,12 @@ import SmartphoneIcon from "@mui/icons-material/Smartphone";
 export const ProjectsGridView = ({ projects = MOCK_PROJECTS }) => {
   return (
     <GridView
-      // @ts-ignore
       items={projects.map((project) => ({
+        id: project.id,
         title: project.name,
         subTitle: project.description,
         icon: project.icon,
+        link: project.link,
         gridProps: {
           lg: 12,
           sm: 12,
@@ -68,6 +68,7 @@ const MOCK_PROJECTS = [
         name: "AWS WAF",
       },
     ],
+    link: "https://github.com/blazinaj/portfolio-website",
   },
   {
     id: 1,
@@ -129,6 +130,7 @@ const MOCK_PROJECTS = [
         name: "",
       },
     ],
+    link: "https://edify.mobi",
   },
   {
     id: 2,
@@ -136,6 +138,7 @@ const MOCK_PROJECTS = [
     description:
       "An AI-powered web application for journaling and self-reflection. Extracts insights, emotions, and topics from journal entries. Generate journals, health reports, and biographies.",
     icon: <HistoryEduIcon />,
+    link: "https://thoughts.mobi",
   },
   {
     id: 3,

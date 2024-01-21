@@ -6,4 +6,5 @@ type GridView_T = {
   subTitle: string;
   icon?: ReactElement;
   gridProps?: object;
+  link?: string;
 };

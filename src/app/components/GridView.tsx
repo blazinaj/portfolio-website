@@ -9,6 +9,10 @@ import {
 import React from "react";
 import { GridView_T } from "@/app/types/GridView";
 
+import IconButton from "@mui/material/IconButton";
+import LaunchIcon from "@mui/icons-material/Launch";
+import Link from "next/link";
+
 interface GridViewProps {
   items: GridView_T[];
 }
@@ -26,7 +30,24 @@ export const GridView = ({ items = [] }: GridViewProps) => {
           lg={3}
           {...(item.gridProps || {})}
         >
-          <ListItem alignItems="flex-start">
+          <ListItem
+            alignItems="flex-start"
+            secondaryAction={
+              item?.link && (
+                <IconButton
+                  edge="end"
+                  aria-label="comments"
+                  sx={{ color: "white" }}
+                  component={Link}
+                  href={item?.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <LaunchIcon />
+                </IconButton>
+              )
+            }
+          >
             <ListItemAvatar>
               <Avatar sx={{ bgcolor: "#000000" }}>{item.icon}</Avatar>
             </ListItemAvatar>
