@@ -1,6 +1,6 @@
-import {ProficiencyChipGrid} from "@/app/components/ProficiencyChipGrid";
-import {Icon} from "@iconify/react";
-import {Skill_T} from "@/app/types/Skill";
+import { ProficiencyChipGrid } from "@/app/components/ProficiencyChipGrid";
+import { Icon } from "@iconify/react";
+import { Skill_T } from "@/app/types/Skill";
 
 interface SkillsListProps {
   skills?: Skill_T[];

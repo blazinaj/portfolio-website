@@ -1,5 +1,5 @@
 import { Chip, Grid } from "@mui/material";
-import {Chip_T} from "@/app/types/Chip";
+import { Chip_T } from "@/app/types/Chip";
 
 interface ChipGridProps {
   chips: Chip_T[];

@@ -1,14 +1,17 @@
 "use client";
 
-import { Stack } from "@mui/system";
+import { Box, Stack } from "@mui/system";
 import React from "react";
 import { PageSection } from "./PageSection";
 import { PageSection_T } from "../types/PageSection";
+import { NavigationLinkGrid } from "@/app/components/NavigationLinkGrid";
+import { Grid } from "@mui/material";
 
 interface PageStackProps {
-  pagesSections: PageSection_T[];
+  homeSection: React.ReactElement;
+  pageSections: PageSection_T[];
   visibilityCallback: Function;
-};
+}
 
 /**
  * Displays the stack of PageSections for the page. Stacked and centered vertically.
@@ -18,12 +21,23 @@ interface PageStackProps {
  * @constructor
  */
 export const PageStack = ({
-  pagesSections,
+  homeSection,
+  pageSections,
   visibilityCallback,
 }: PageStackProps) => {
   return (
     <Stack direction={"column"} spacing={2} alignItems={"center"}>
-      {pagesSections.map((pageSection: PageSection_T) => (
+      <PageSection id={"about-hero"}>
+        <Grid container spacing={4}>
+          <Grid item lg={12}>
+            {homeSection}
+          </Grid>
+          <Grid item lg={12}>
+            <NavigationLinkGrid links={pageSections} />
+          </Grid>
+        </Grid>
+      </PageSection>
+      {pageSections.map((pageSection: PageSection_T) => (
         <PageSection
           key={pageSection.id}
           id={pageSection.id}

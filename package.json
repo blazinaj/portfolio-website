@@ -13,26 +13,26 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.15.4",
+    "@mui/lab": "^5.0.0-alpha.161",
     "@mui/material": "^5.15.4",
     "aws-amplify": "^6.0.5",
     "framer-motion": "^10.18.0",
+    "next": "14.1.0",
     "react": "^18",
-    "react-chrono": "^2.4.0",
     "react-dom": "^18",
-    "react-stars": "^2.2.5",
-    "next": "14.1.0"
+    "react-stars": "^2.2.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@aws-amplify/backend": "^0.5.5",
+    "@aws-amplify/backend-cli": "^0.9.1",
+    "@iconify/react": "^4.1.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-stars": "^2.2.4",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
-    "@types/react-stars": "^2.2.4",
     "prettier": "3.2.4",
-    "@aws-amplify/backend": "^0.5.5",
-    "@aws-amplify/backend-cli": "^0.9.1",
-    "@iconify/react": "^4.1.1"
+    "typescript": "^5"
   }
 }

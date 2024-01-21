@@ -1,6 +1,6 @@
 import React from "react";
-import {ProficiencyChipGrid} from "@/app/components/ProficiencyChipGrid";
-import {Icon} from "@iconify/react";
+import { ProficiencyChipGrid } from "@/app/components/ProficiencyChipGrid";
+import { Icon } from "@iconify/react";
 
 /**
  * Grid of technologies and software applications with knowledge of.

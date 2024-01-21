@@ -117,24 +117,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <VisibilityContextProvider value={visibilityContextState}>
-        <Box sx={{ height: "100vh", maxWidth: "750px" }}>
-          <AboutHero />
-          <NavigationLinkGrid
-            links={pageSections}
-            sx={{
-              position: "absolute",
-              bottom: "2em",
-              left: "4em",
-              right: "4em",
-            }}
-          />
-        </Box>
-
         <PageStack
-          pagesSections={pageSections}
+          homeSection={<AboutHero />}
+          pageSections={pageSections}
           visibilityCallback={visibilityContextState.visibilityCallback}
         />
-
         <NavigationSpeedDial pages={pageSections} />
       </VisibilityContextProvider>
     </main>

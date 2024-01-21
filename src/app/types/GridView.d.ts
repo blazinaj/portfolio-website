@@ -5,5 +5,5 @@ type GridView_T = {
   title: string;
   subTitle: string;
   icon?: ReactElement;
-  gridProps: object;
+  gridProps?: object;
 };

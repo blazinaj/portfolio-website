@@ -1,14 +1,14 @@
 "use client";
 
 import * as React from "react";
-import {ReactElement, useEffect, useRef} from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import { useOnScreen } from "@/app/hooks/useOnScreen";
 import { Box } from "@mui/system";
 import { useVisibilityContext } from "@/app/context/VisibilityContext";
 
 interface PageSectionProps {
   icon?: ReactElement;
-  title: string;
+  title?: string;
   subTitle?: string;
   children: ReactElement;
   id: string | number;
@@ -43,6 +43,7 @@ export const PageSection = ({
 
   return (
     <div
+      id={id.toString()}
       style={{ paddingTop: "5vh" }}
       className={"page-section-container"}
     >
@@ -50,25 +51,27 @@ export const PageSection = ({
         className="page-section"
         style={{ minHeight: "90vh", textAlign: "center" }}
       >
-        <h2
-          className={"page-section-header"}
-          style={{
-            marginBottom: "8px",
-          }}
-          ref={ref}
-        >
-          {icon && (
-            <span
-              className={"page-section-icon-wrapper"}
-              style={{
-                marginRight: "0.5em",
-              }}
-            >
-              {icon}
-            </span>
-          )}
-          {title}
-        </h2>
+        {title && (
+          <h2
+            className={"page-section-header"}
+            style={{
+              marginBottom: "8px",
+            }}
+            ref={ref}
+          >
+            {icon && (
+              <span
+                className={"page-section-icon-wrapper"}
+                style={{
+                  marginRight: "0.5em",
+                }}
+              >
+                {icon}
+              </span>
+            )}
+            {title}
+          </h2>
+        )}
         {subTitle && <p className={"page-section-subtitle"}>{subTitle}</p>}
         <Box
           className={"page-section-content-wrapper"}

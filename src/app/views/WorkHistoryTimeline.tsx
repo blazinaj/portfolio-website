@@ -1,57 +1,49 @@
-"use client"
-import React, {useEffect, useState} from "react";
-// import { Chrono } from "react-chrono";
+"use client";
+import React from "react";
+import { TimelineView } from "@/app/components/TimelineView";
 
 const items = [
   {
-    title: "December 2023 - Current",
-    cardTitle: "Rivial Data Security (Current)",
-    cardSubtitle: "AI Engineer",
+    id: "1",
+    date: "December 2023 - Current",
+    title: "AI Engineer",
+    subTitle: "Rivial Data Security",
   },
   {
-    title: "September 2019 - December 2023",
-    cardTitle: "Rivial Data Security",
-    cardSubtitle: "Software Development Manager / Product Manager",
+    id: "2",
+    date: "September 2019 - December 2023",
+    subTitle: "Rivial Data Security",
+    title: "Software Development Manager / Product Manager",
   },
   {
-    title: "March 2018 - September 2019",
-    cardTitle: "Rivial Data Security",
-    cardSubtitle: "Cybersecurity Analyst",
+    id: "3",
+    date: "March 2018 - September 2019",
+    subTitle: "Rivial Data Security",
+    title: "Cybersecurity Analyst",
   },
   {
-    title: "September 2015 - March 2018",
-    cardTitle: "Eastern Washington University JFK Library",
-    cardSubtitle: "Equipment Desk Technician",
+    id: "4",
+    date: "September 2015 - March 2018",
+    subTitle: "Eastern Washington University JFK Library",
+    title: "Equipment Desk Technician",
+    secondary: true,
+  },
+  {
+    id: "5",
+    date: "October 2012 - March 2015",
+    title: "Sales & Service Representative",
+    subTitle: "Les Schwab Tire Center",
+    secondary: true,
+  },
+  {
+    id: "6",
+    date: "September 2009 - October 2012",
+    title: "Frontend Shift Lead",
+    subTitle: "Jerrol's Book & Office Supply Co.",
+    secondary: true,
   },
 ];
 
 export const WorkHistoryTimeline = () => {
-
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true); // Component has mounted, update state to trigger re-render
-    }, []);
-
-  return isClient ? (
-      <div>timeline..</div>
-    // <Chrono
-    //   items={items}
-    //   mode="VERTICAL"
-    //   hideControls
-    //   cardHeight="150px"
-    //   allowDynamicUpdate
-    //   borderLessCards
-    //   disableAutoScrollOnClick
-    //   disableInteraction
-    //   theme={{
-    //     primary: "#ffffff",
-    //     secondary: "#ffffff",
-    //     cardBgColor: "#000000",
-    //     cardForeColor: "#ffffff",
-    //     cardDetailsColor: "#ffffff",
-    //     cardSubtitleColor: "#ffffff",
-    //   }}
-    // />
-  ) : <div>Loading Client..</div>
+  return <TimelineView events={items} />;
 };

@@ -6,8 +6,8 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import HomeIcon from "@mui/icons-material/Home";
-import {useVisibilityContext} from "@/app/context/VisibilityContext";
-import {PageSection_T} from "@/app/types/PageSection";
+import { useVisibilityContext } from "@/app/context/VisibilityContext";
+import { PageSection_T } from "@/app/types/PageSection";
 
 const variants = {
   open: { opacity: 1, x: 0 },
@@ -16,7 +16,7 @@ const variants = {
 
 interface NavigationSpeedDialProps {
   pages: PageSection_T[];
-};
+}
 
 /**
  * A floating action button that is designed to be used as a simple section-based navigation menu.
@@ -24,13 +24,10 @@ interface NavigationSpeedDialProps {
  * @param {PageSection_T[]} pages - The pages to display for the speed dial
  * @constructor
  */
-export const NavigationSpeedDial = ({
-  pages,
-}: NavigationSpeedDialProps) => {
-
+export const NavigationSpeedDial = ({ pages }: NavigationSpeedDialProps) => {
   const router = useRouter();
 
-  const {visibleSection} = useVisibilityContext();
+  const { visibleSection } = useVisibilityContext();
 
   return (
     <Box
@@ -65,10 +62,9 @@ export const NavigationSpeedDial = ({
               key={page.id}
               icon={page.icon}
               tooltipTitle={page.title}
-              tooltipOpen={page?.id === visibleSection}
+              tooltipOpen={false}
               sx={{
-                color: page.id === visibleSection ? "gold" : undefined,
-                height: page.id === visibleSection ? "75px" : undefined,
+                color: page.id === visibleSection ? "black" : undefined,
               }}
               onClick={() => {
                 router.push(`/${page.href}`);

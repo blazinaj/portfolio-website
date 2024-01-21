@@ -1,6 +1,6 @@
 "use client";
 
-import {RefObject, useEffect, useState} from "react";
+import { RefObject, useEffect, useState } from "react";
 
 /**
  * Ref: https://stackoverflow.com/a/65008608
@@ -13,12 +13,11 @@ export const useOnScreen = (ref: RefObject<HTMLElement>) => {
   useEffect(() => {
     if (ref?.current) {
       const observer = new IntersectionObserver(([entry]) =>
-          setIntersecting(entry.isIntersecting),
-      )
+        setIntersecting(entry.isIntersecting),
+      );
       observer.observe(ref.current);
       return () => observer.disconnect();
     }
-
   }, [ref]);
 
   return isIntersecting;

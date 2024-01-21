@@ -2,7 +2,7 @@ import styles from "@/app/page.module.css";
 import { Grid } from "@mui/material";
 import Link from "next/link";
 import { Stack } from "@mui/system";
-import {NavigationLink_T} from "@/app/types/NavigationLink";
+import { NavigationLink_T } from "@/app/types/NavigationLink";
 
 interface NavigationLinkGridProps {
   links: NavigationLink_T[];
@@ -13,13 +13,24 @@ interface NavigationLinkGridProps {
  * Displays a grid of next Links
  * @constructor
  */
-export const NavigationLinkGrid = ({ links, sx = {} }: NavigationLinkGridProps) => {
+export const NavigationLinkGrid = ({
+  links,
+  sx = {},
+}: NavigationLinkGridProps) => {
   return (
     <Grid container spacing={2} sx={sx}>
       {
         // @ts-ignore
         links.map((link) => (
-          <Grid item key={link.href} className={styles.card}>
+          <Grid
+            item
+            key={link.href}
+            className={styles.card}
+            lg={3}
+            md={6}
+            sm={12}
+            xs={12}
+          >
             <Link href={link.href}>
               <h2>
                 <Stack direction={"row"} alignItems="end">

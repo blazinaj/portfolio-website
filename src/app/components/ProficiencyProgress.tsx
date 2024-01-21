@@ -4,7 +4,9 @@ interface ProficiencyProgressProps {
   proficiency: number | undefined;
 }
 
-export const ProficiencyProgress = ({ proficiency }: ProficiencyProgressProps) => {
+export const ProficiencyProgress = ({
+  proficiency,
+}: ProficiencyProgressProps) => {
   return (
     <ReactStars
       count={5}

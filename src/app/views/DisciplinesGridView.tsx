@@ -23,8 +23,8 @@ import GppGoodIcon from "@mui/icons-material/GppGood";
 export const DisciplinesGridView = ({ disciplines = MOCK_DISCIPLINES }) => {
   return (
     <GridView
-      // @ts-ignore
       items={disciplines.map((discipline) => ({
+        id: discipline.id,
         title: discipline.name,
         subTitle: discipline.description,
         icon: discipline.icon,
