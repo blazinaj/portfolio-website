@@ -1,3 +1,5 @@
+"use client"
+
 import { RefObject, useEffect, useMemo, useState } from "react";
 
 /**
