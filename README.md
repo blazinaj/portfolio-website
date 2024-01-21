@@ -1,3 +1,37 @@
+## Portfolio Website
+
+This is my portfolio website. It is built with Next.js and TypeScript. It is hosted through AWS CloudFront and S3 using AWS Amplify.
+
+The website is available at [jacob.blazina.family](https://jacob.blazina.family).
+
+### Views
+
+The website is composed of the following views:
+
+- About Me
+- Work Experience
+- Disciplines
+- Education
+- Projects
+- Languages
+- Technologies
+- Skills
+- Hobbies
+
+### Components
+
+The views are made up of the following components:
+
+- `<PageStack />`
+- `<ChipGrid />`
+- `<GridView />`
+- `<NavigationLinkGrid />`
+- `<NavigationSpeedDial />`
+- `<TimelineView />`
+- `<ProficiencyChipGrid />`
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -28,9 +62,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
