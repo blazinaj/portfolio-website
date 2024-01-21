@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import {GridView_T} from "@/app/types/GridView";
 
 interface GridViewProps {
   items: GridView_T[];
