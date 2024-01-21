@@ -1,5 +1,6 @@
-import React from "react";
-import { Chrono } from "react-chrono";
+"use client"
+import React, {useEffect, useState} from "react";
+// import { Chrono } from "react-chrono";
 
 const items = [
   {
@@ -25,24 +26,32 @@ const items = [
 ];
 
 export const WorkHistoryTimeline = () => {
-  return (
-    <Chrono
-      items={items}
-      mode="VERTICAL"
-      hideControls
-      cardHeight="150px"
-      allowDynamicUpdate
-      borderLessCards
-      disableAutoScrollOnClick
-      disableInteraction
-      theme={{
-        primary: "#ffffff",
-        secondary: "#ffffff",
-        cardBgColor: "#000000",
-        cardForeColor: "#ffffff",
-        cardDetailsColor: "#ffffff",
-        cardSubtitleColor: "#ffffff",
-      }}
-    />
-  );
+
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true); // Component has mounted, update state to trigger re-render
+    }, []);
+
+  return isClient ? (
+      <div>timeline..</div>
+    // <Chrono
+    //   items={items}
+    //   mode="VERTICAL"
+    //   hideControls
+    //   cardHeight="150px"
+    //   allowDynamicUpdate
+    //   borderLessCards
+    //   disableAutoScrollOnClick
+    //   disableInteraction
+    //   theme={{
+    //     primary: "#ffffff",
+    //     secondary: "#ffffff",
+    //     cardBgColor: "#000000",
+    //     cardForeColor: "#ffffff",
+    //     cardDetailsColor: "#ffffff",
+    //     cardSubtitleColor: "#ffffff",
+    //   }}
+    // />
+  ) : <div>Loading Client..</div>
 };
