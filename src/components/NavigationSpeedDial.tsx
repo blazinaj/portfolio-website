@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import HomeIcon from "@mui/icons-material/Home";
 import { useVisibilityContext } from "@/context/VisibilityContext";
 import { PageSection_T } from "@/types/PageSection";
+import {IconComponent} from "@/components/IconComponent";
 
 const variants = {
   open: { opacity: 1, x: 0 },
@@ -60,7 +61,7 @@ export const NavigationSpeedDial = ({ pages }: NavigationSpeedDialProps) => {
           {pages.map((page) => (
             <SpeedDialAction
               key={page.id}
-              icon={page.icon}
+              icon={<IconComponent icon={page.icon}/>}
               tooltipTitle={page.title}
               tooltipOpen={false}
               sx={{

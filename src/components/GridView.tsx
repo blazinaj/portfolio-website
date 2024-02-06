@@ -12,6 +12,7 @@ import { GridView_T } from "@/types/GridView";
 import IconButton from "@mui/material/IconButton";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Link from "next/link";
+import {Icon} from "@iconify/react";
 
 interface GridViewProps {
   items: GridView_T[];
@@ -49,7 +50,15 @@ export const GridView = ({ items = [] }: GridViewProps) => {
             }
           >
             <ListItemAvatar>
-              <Avatar sx={{ bgcolor: "#000000" }}>{item.icon}</Avatar>
+              <Avatar sx={{ bgcolor: "#000000" }}>
+                {
+                  typeof(item.icon) === "string" ? (
+                      <Icon icon={item.icon} />
+                  ) : (
+                    item.icon
+                  )
+                }
+              </Avatar>
             </ListItemAvatar>
             <ListItemText
               primary={item.title}

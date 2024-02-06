@@ -8,17 +8,24 @@ import {NavigationLinkGrid} from "@/components/NavigationLinkGrid";
 import {Grid} from "@mui/material";
 
 interface PageStackProps {
+  /**
+   * The section to display at the top of the page
+   */
   homeSection: React.ReactElement;
+
+  /**
+   * The sections to display in a vertical stack
+   */
   pageSections: PageSection_T[];
+
+  /**
+   * Visibility callback to pass to each PageSection to determine when it is visible
+   */
   visibilityCallback: Function;
 }
 
 /**
  * Displays the stack of PageSections for the page. Stacked and centered vertically.
- *
- * @param {PageSection_T} pagesSections - The sections to display in a vertical stack
- * @param {Function} visibilityCallback - Visibility callback to pass to each PageSection to determine when it is visible
- * @constructor
  */
 export const PageStack = ({
   homeSection,

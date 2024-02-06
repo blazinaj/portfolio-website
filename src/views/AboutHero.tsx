@@ -9,6 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "next/link";
 import { useVisibilityContext } from "@/context/VisibilityContext";
+import {useDataProvider} from "@/hooks/useDataProvider";
 
 /**
  * Displays the following elements:
@@ -17,8 +18,6 @@ import { useVisibilityContext } from "@/context/VisibilityContext";
  * - A profile image (pulled from linkedIn)
  * - A short bio
  * - Social Links
- *
- * @constructor
  */
 export const AboutHero = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -31,6 +30,10 @@ export const AboutHero = () => {
       visibilityCallback("about-hero", isVisible);
     }
   }, [isVisible, visibilityCallback]);
+
+  const {
+    CONTACT
+  } = useDataProvider();
 
   return (
     <div
@@ -47,7 +50,6 @@ export const AboutHero = () => {
           }}
         >
           <Image
-            // className={styles.logo}
             src="/Profile.jpg"
             alt="Next.js Logo"
             width={180}
@@ -59,7 +61,9 @@ export const AboutHero = () => {
         {/*Bio*/}
         <h1 className="about-hero__title">Jacob Blazina</h1>
         <p ref={ref} className="about-hero__subtitle">
-          I`&apos;m a software engineer with a passion for building things.
+          {
+            CONTACT.bio
+          }
         </p>
 
         {/*Social Links*/}
@@ -67,7 +71,7 @@ export const AboutHero = () => {
           <IconButton
             color={"primary"}
             component={Link}
-            href={"https://www.facebook.com/jacob.blazina/"}
+            href={CONTACT.facebook}
             target={"_blank"}
           >
             <Facebook />
@@ -76,7 +80,7 @@ export const AboutHero = () => {
           <IconButton
             color={"primary"}
             component={Link}
-            href={"www.linkedin.com/in/jacob-blazina"}
+            href={CONTACT.linkedIn}
             target={"_blank"}
           >
             <LinkedInIcon />
@@ -85,7 +89,7 @@ export const AboutHero = () => {
           <IconButton
             color={"primary"}
             component={Link}
-            href={"https://github.com/blazinaj"}
+            href={CONTACT.gitHub}
             target={"_blank"}
           >
             <GitHubIcon />

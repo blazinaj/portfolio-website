@@ -1,8 +1,8 @@
 import styles from "@/app/page.module.css";
-import { Grid } from "@mui/material";
+import {Grid} from "@mui/material";
 import Link from "next/link";
-import { Stack } from "@mui/system";
-import { NavigationLink_T } from "@/types/NavigationLink";
+import {Stack} from "@mui/system";
+import {NavigationLink_T} from "@/types/NavigationLink";
 
 interface NavigationLinkGridProps {
   links: NavigationLink_T[];
@@ -17,6 +17,12 @@ export const NavigationLinkGrid = ({
   links,
   sx = {},
 }: NavigationLinkGridProps) => {
+
+  const getLink = (link: NavigationLink_T): string => {
+    return link?.href ? link.href : `#${link.id}`;
+  }
+
+
   return (
     <Grid container spacing={2} sx={sx}>
       {
@@ -24,14 +30,14 @@ export const NavigationLinkGrid = ({
         links.map((link) => (
           <Grid
             item
-            key={link.href}
+            key={getLink(link)}
             className={styles.card}
             lg={3}
             md={6}
             sm={12}
             xs={12}
           >
-            <Link href={link.href}>
+            <Link href={getLink(link)}>
               <h2>
                 <Stack direction={"row"} alignItems="end">
                   {link.icon && (

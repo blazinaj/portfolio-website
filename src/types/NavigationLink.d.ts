@@ -4,6 +4,6 @@ type NavigationLink_T = {
   id: string | number;
   title: string;
   subTitle?: string;
-  icon?: ReactElement;
-  href: string;
+  icon?: string | ReactElement;
+  href?: string;
 };

@@ -4,7 +4,7 @@ type GridView_T = {
   id: string | number;
   title: string;
   subTitle: string;
-  icon?: ReactElement;
+  icon?: string;
   gridProps?: object;
   link?: string;
 };

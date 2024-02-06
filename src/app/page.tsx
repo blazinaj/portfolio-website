@@ -25,6 +25,10 @@ import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import {ProgrammingLanguagesGrid} from "@/views/ProgrammingLanguagesGrid";
 import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
 import {useVisibilityContextState, VisibilityContextProvider,} from "@/context/VisibilityContext";
+import {useDataProvider} from "@/hooks/useDataProvider";
+import {LANGUAGES} from "@/data/LANGUAGES";
+import {SKILLS} from "@/data/SKILLS";
+import {PROJECTS} from "@/data/PROJECTS";
 
 /**
  * About me: linked in profile picture and link, bio with background
@@ -41,13 +45,26 @@ import {useVisibilityContextState, VisibilityContextProvider,} from "@/context/V
 export default function Home() {
   const visibilityContextState = useVisibilityContextState();
 
+  const {
+    LANGUAGES,
+    SKILLS,
+    PROJECTS,
+    EXPERIENCE,
+    EDUCATION,
+    CERTIFICATIONS,
+    TECHNOLOGIES,
+    INTERESTS,
+    CONTACT,
+    DISCIPLINES
+  } = useDataProvider();
+
   const pageSections = [
     {
       id: "work-history",
       title: "Work History",
       subTitle: "Timeline view of my relevant employment history",
       icon: <WorkHistoryIcon />,
-      component: <WorkHistoryTimeline />,
+      component: <WorkHistoryTimeline experience={EXPERIENCE} />,
       href: "#work-history",
     },
     {
@@ -55,7 +72,7 @@ export default function Home() {
       title: "Disciplines",
       subTitle: "My experience in various software development roles",
       icon: <EngineeringIcon />,
-      component: <DisciplinesGridView />,
+      component: <DisciplinesGridView disciplines={DISCIPLINES} />,
       href: "#disciplines",
     },
     {
@@ -63,7 +80,7 @@ export default function Home() {
       title: "Education",
       subTitle: "My formal university education",
       icon: <SchoolIcon />,
-      component: <EducationTimeline />,
+      component: <EducationTimeline education={EDUCATION} />,
       href: "#education",
     },
     {
@@ -71,7 +88,7 @@ export default function Home() {
       title: "Projects",
       subTitle: "Personal projects that I've worked on in my free time",
       icon: <TableViewIcon />,
-      component: <ProjectsGridView />,
+      component: <ProjectsGridView projects={PROJECTS} />,
       href: "#projects",
     },
     {
@@ -79,7 +96,7 @@ export default function Home() {
       title: "Languages",
       subTitle: "Programming languages that I'm more or less familiar with",
       icon: <TerminalIcon />,
-      component: <ProgrammingLanguagesGrid />,
+      component: <ProgrammingLanguagesGrid languages={LANGUAGES} />,
       href: "#programming-languages",
     },
     {
@@ -88,15 +105,15 @@ export default function Home() {
       subTitle:
         "Applications and technologies that I've used throughout my career",
       icon: <DisplaySettingsIcon />,
-      component: <TechnologiesGrid />,
+      component: <TechnologiesGrid technologies={TECHNOLOGIES} />,
       href: "#technologies",
     },
     {
       id: "skills",
       title: "Skills",
-      subTitle: "Skills and proficiencies that I've developed over the years",
+      subTitle: "Proficiencies that I've developed over the years",
       icon: <AutoAwesomeIcon />,
-      component: <SkillsList />,
+      component: <SkillsList skills={SKILLS} />,
       href: "#skills",
     },
     {
@@ -104,10 +121,12 @@ export default function Home() {
       title: "Hobbies",
       subTitle: "The things that I like to do, that make me who I am",
       icon: <DirectionsBikeIcon />,
-      component: <HobbiesGridView />,
+      component: <HobbiesGridView hobbies={INTERESTS} />,
       href: "#hobbies",
     },
   ];
+
+
 
   return (
     <main className={styles.main}>

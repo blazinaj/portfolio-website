@@ -2,9 +2,9 @@ import { ReactElement } from "react";
 
 type PageSection_T = {
   id: string | number;
-  icon?: ReactElement;
+  icon?: string | ReactElement;
   title: string;
   subTitle: string;
   component: ReactElement;
-  href: string;
+  href?: string;
 };

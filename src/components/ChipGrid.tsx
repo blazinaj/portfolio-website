@@ -1,5 +1,6 @@
 import { Chip, Grid } from "@mui/material";
 import { Chip_T } from "@/types/Chip";
+import {IconComponent} from "@/components/IconComponent";
 
 interface ChipGridProps {
   chips: Chip_T[];
@@ -7,7 +8,6 @@ interface ChipGridProps {
 
 /**
  * Displays Chips in a MUI Grid
- * @constructor
  */
 export const ChipGrid = ({ chips }: ChipGridProps) => {
   return (
@@ -21,7 +21,7 @@ export const ChipGrid = ({ chips }: ChipGridProps) => {
               fontSize: "0.5em",
               width: "100%",
             }}
-            icon={chip.icon}
+            icon={<IconComponent icon={chip.icon}/>}
             label={chip.label}
             variant="outlined"
           />

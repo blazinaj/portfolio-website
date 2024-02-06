@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { ProficiencyChip_T } from "@/types/ProficiencyChip";
 import { ProficiencyProgress } from "@/components/ProficiencyProgress";
+import {IconComponent} from "@/components/IconComponent";
 
 interface ProficiencyChipGridProps {
   chips: ProficiencyChip_T[];
@@ -39,7 +40,9 @@ export const ProficiencyChipGrid = ({ chips }: ProficiencyChipGridProps) => {
             gap: "10px",
           }}
         >
-          <Box sx={{ fontSize: "2em", flexGrow: 1 }}>{chip.icon}</Box>
+          <Box sx={{ fontSize: "2em", flexGrow: 1 }}>
+            <IconComponent icon={chip.icon}/>
+          </Box>
           <Box
             sx={{
               flexGrow: 1,

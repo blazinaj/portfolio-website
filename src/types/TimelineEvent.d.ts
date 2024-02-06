@@ -1,5 +1,5 @@
 export type TimelineEvent_T = {
-  id: string;
+  id: string | number;
   title: string;
   subTitle: string;
   date: string;
