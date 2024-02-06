@@ -7,6 +7,7 @@ import {EDUCATION} from "@/data/EDUCATION";
 import {TECHNOLOGIES} from "@/data/TECHOLOGIES";
 import {INTERESTS} from "@/data/INTERESTS";
 import {CONTACT} from "@/data/CONTACT";
+import {DISCIPLINES} from "@/data/DISCIPLINES";
 
 export interface DataProvider {
     LANGUAGES: typeof LANGUAGES,
@@ -17,9 +18,10 @@ export interface DataProvider {
     INTERESTS: typeof INTERESTS,
     CONTACT: typeof CONTACT,
     TECHNOLOGIES: typeof TECHNOLOGIES,
+    DISCIPLINES: typeof DISCIPLINES,
 }
 
-export const useDataProvider = () => {
+export const useDataProvider = (): DataProvider => {
 
     const mockData= useMemo(() => {
         return {
@@ -31,6 +33,7 @@ export const useDataProvider = () => {
             INTERESTS,
             CONTACT,
             TECHNOLOGIES,
+            DISCIPLINES,
         }
     }, [])
 

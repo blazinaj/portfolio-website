@@ -51,7 +51,6 @@ export default function Home() {
     PROJECTS,
     EXPERIENCE,
     EDUCATION,
-    CERTIFICATIONS,
     TECHNOLOGIES,
     INTERESTS,
     CONTACT,
@@ -125,8 +124,6 @@ export default function Home() {
       href: "#hobbies",
     },
   ];
-
-
 
   return (
     <main className={styles.main}>

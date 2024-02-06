@@ -1,6 +1,7 @@
+import {Skill_T} from "@/types/Skill";
 
 
-export const SKILLS = [
+export const SKILLS: Skill_T[] = [
     {
         id: 0,
         name: "Cybersecurity",

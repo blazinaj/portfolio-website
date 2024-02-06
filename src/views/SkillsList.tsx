@@ -3,10 +3,10 @@ import { Icon } from "@iconify/react";
 import { Skill_T } from "@/types/Skill";
 
 interface SkillsListProps {
-  skills?: Skill_T[];
+  skills: Skill_T[];
 }
 
-export const SkillsList = ({ skills = MOCK_SKILLS }: SkillsListProps) => {
+export const SkillsList = ({ skills }: SkillsListProps) => {
   return (
     <ProficiencyChipGrid
       chips={skills.map((skill) => ({
