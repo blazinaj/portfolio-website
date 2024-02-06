@@ -1,0 +1,63 @@
+type Skill @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  proficiency: Int
+  icon: String
+  projects: [Project] @manyToMany(relationName: "ProjectSkill")
+}
+
+type Technology @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  proficiency: Int
+  icon: String
+  projects: [Project] @manyToMany(relationName: "ProjectTechnology")
+}
+
+type Project @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  description: String
+  link: String
+  Technologies: [Technology] @manyToMany(relationName: "ProjectTechnology")
+  Skills: [Skill] @manyToMany(relationName: "ProjectSkill")
+}
+
+type Language @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  proficiency: Int
+  icon: String
+}
+
+type Interest @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  description: String
+  icon: String
+}
+
+type Experience @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  title: String
+  subTitle: String
+  date: String
+  logo: String
+}
+
+type Education @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  title: String
+  subTitle: String
+  date: String
+}
+
+type Contact @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  firstName: String
+  lastName: String
+  bio: String
+  linkedIn: String
+  github: String
+  facebook: String
+}
