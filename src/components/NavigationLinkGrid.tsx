@@ -2,7 +2,7 @@ import styles from "@/app/page.module.css";
 import { Grid } from "@mui/material";
 import Link from "next/link";
 import { Stack } from "@mui/system";
-import { NavigationLink_T } from "@/app/types/NavigationLink";
+import { NavigationLink_T } from "@/types/NavigationLink";
 
 interface NavigationLinkGridProps {
   links: NavigationLink_T[];

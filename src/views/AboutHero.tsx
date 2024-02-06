@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { IconButton, Stack } from "@mui/material";
 import { useEffect, useRef } from "react";
-import { useOnScreen } from "@/app/hooks/useOnScreen";
+import { useOnScreen } from "@/hooks/useOnScreen";
 import { Facebook } from "@mui/icons-material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "next/link";
-import { useVisibilityContext } from "@/app/context/VisibilityContext";
+import { useVisibilityContext } from "@/context/VisibilityContext";
 
 /**
  * Displays the following elements:

@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import { ReactElement, useEffect, useRef } from "react";
-import { useOnScreen } from "@/app/hooks/useOnScreen";
+import { useOnScreen } from "@/hooks/useOnScreen";
 import { Box } from "@mui/system";
-import { useVisibilityContext } from "@/app/context/VisibilityContext";
+import { useVisibilityContext } from "@/context/VisibilityContext";
 
 interface PageSectionProps {
   icon?: ReactElement;

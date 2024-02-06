@@ -1,8 +1,8 @@
-import { ChipGrid } from "@/app/components/ChipGrid";
+import { ChipGrid } from "@/components/ChipGrid";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
-import { ProficiencyChip_T } from "@/app/types/ProficiencyChip";
-import { ProficiencyProgress } from "@/app/components/ProficiencyProgress";
+import { ProficiencyChip_T } from "@/types/ProficiencyChip";
+import { ProficiencyProgress } from "@/components/ProficiencyProgress";
 
 interface ProficiencyChipGridProps {
   chips: ProficiencyChip_T[];

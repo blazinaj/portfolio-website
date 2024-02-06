@@ -1,20 +1,20 @@
 "use client";
 
-import styles from "./page.module.css";
-import {AboutHero} from "@/app/views/AboutHero";
+import styles from "@/app/page.module.css";
+import {AboutHero} from "@/views/AboutHero";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import {SkillsList} from "@/app/views/SkillsList";
-import {ProjectsGridView} from "@/app/views/ProjectsGridView";
-import {TechnologiesGrid} from "@/app/views/TechnologiesGrid";
-import {WorkHistoryTimeline} from "@/app/views/WorkHistoryTimeline";
-import {PageStack} from "@/app/components/PageStack";
-import {DisciplinesGridView} from "@/app/views/DisciplinesGridView";
-import {HobbiesGridView} from "@/app/views/HobbiesGridView";
-import {NavigationSpeedDial} from "@/app/components/NavigationSpeedDial";
-import {EducationTimeline} from "@/app/views/EducationTimeline";
+import {SkillsList} from "@/views/SkillsList";
+import {ProjectsGridView} from "@/views/ProjectsGridView";
+import {TechnologiesGrid} from "@/views/TechnologiesGrid";
+import {WorkHistoryTimeline} from "@/views/WorkHistoryTimeline";
+import {PageStack} from "@/components/PageStack";
+import {DisciplinesGridView} from "@/views/DisciplinesGridView";
+import {HobbiesGridView} from "@/views/HobbiesGridView";
+import {NavigationSpeedDial} from "@/components/NavigationSpeedDial";
+import {EducationTimeline} from "@/views/EducationTimeline";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import SchoolIcon from "@mui/icons-material/School";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
@@ -22,9 +22,9 @@ import TableViewIcon from "@mui/icons-material/TableView";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
-import {ProgrammingLanguagesGrid} from "@/app/views/ProgrammingLanguagesGrid";
+import {ProgrammingLanguagesGrid} from "@/views/ProgrammingLanguagesGrid";
 import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
-import {useVisibilityContextState, VisibilityContextProvider,} from "@/app/context/VisibilityContext";
+import {useVisibilityContextState, VisibilityContextProvider,} from "@/context/VisibilityContext";
 
 /**
  * About me: linked in profile picture and link, bio with background

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { TimelineView } from "@/app/components/TimelineView";
+import { TimelineView } from "@/components/TimelineView";
 
 const items = [
   {

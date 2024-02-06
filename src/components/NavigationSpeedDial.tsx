@@ -6,8 +6,8 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import HomeIcon from "@mui/icons-material/Home";
-import { useVisibilityContext } from "@/app/context/VisibilityContext";
-import { PageSection_T } from "@/app/types/PageSection";
+import { useVisibilityContext } from "@/context/VisibilityContext";
+import { PageSection_T } from "@/types/PageSection";
 
 const variants = {
   open: { opacity: 1, x: 0 },

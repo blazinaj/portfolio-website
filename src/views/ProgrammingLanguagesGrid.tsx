@@ -1,5 +1,5 @@
 import React from "react";
-import { ProficiencyChipGrid } from "@/app/components/ProficiencyChipGrid";
+import { ProficiencyChipGrid } from "@/components/ProficiencyChipGrid";
 import { Icon } from "@iconify/react";
 
 /**

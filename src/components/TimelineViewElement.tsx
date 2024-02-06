@@ -4,7 +4,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineItem from "@mui/lab/TimelineItem";
-import { TimelineEvent_T } from "@/app/types/TimelineEvent";
+import { TimelineEvent_T } from "@/types/TimelineEvent";
 import { Typography } from "@mui/material";
 
 interface TimelineViewElementProps {

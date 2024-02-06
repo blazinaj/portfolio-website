@@ -3,8 +3,8 @@
 import {Stack} from "@mui/system";
 import React from "react";
 import {PageSection} from "./PageSection";
-import {PageSection_T} from "../types/PageSection";
-import {NavigationLinkGrid} from "@/app/components/NavigationLinkGrid";
+import {PageSection_T} from "@/types/PageSection";
+import {NavigationLinkGrid} from "@/components/NavigationLinkGrid";
 import {Grid} from "@mui/material";
 
 interface PageStackProps {

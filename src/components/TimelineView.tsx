@@ -1,6 +1,6 @@
 import Timeline from "@mui/lab/Timeline";
-import { TimelineViewElement } from "@/app/components/TimelineViewElement";
-import { TimelineEvent_T } from "@/app/types/TimelineEvent";
+import { TimelineViewElement } from "@/components/TimelineViewElement";
+import { TimelineEvent_T } from "@/types/TimelineEvent";
 
 interface TimelineViewProps {
   events: TimelineEvent_T[];
