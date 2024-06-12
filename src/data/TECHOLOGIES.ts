@@ -200,4 +200,22 @@ export const TECHNOLOGIES = [
         icon: "logos:aws-guardduty",
         proficiency: 3,
     },
+    {
+        id: 34,
+        name: "Plotly Dash Enterprise",
+        icon: "logos:plotly",
+        proficiency: 3,
+    },
+    {
+        id: 35,
+        name: "Google Cloud Platform",
+        icon: "logos:google",
+        proficiency: 3,
+    },
+    {
+        id: 35,
+        name: "Microsoft Azure",
+        icon: "logos:microsoft-azure",
+        proficiency: 3,
+    },
 ]

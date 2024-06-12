@@ -1,7 +1,13 @@
 export const EXPERIENCE = [
     {
+        id: "0",
+        date: "March 2024 - Current",
+        title: "Senior Application Developer",
+        subTitle: "Aetna, a CVS Health Company",
+    },
+    {
         id: "1",
-        date: "December 2023 - Current",
+        date: "December 2023 - March 2024",
         title: "AI Engineer",
         subTitle: "Rivial Data Security",
     },
