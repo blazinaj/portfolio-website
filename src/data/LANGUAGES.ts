@@ -5,7 +5,7 @@ export const LANGUAGES = [
     {
         id: 1,
         name: "Typescript",
-        proficiency: 3, // out of 5 - 'comfortable'
+        proficiency: 4, // out of 5 - 'comfortable'
         icon: "skill-icons:typescript",
     },
     {
@@ -18,7 +18,7 @@ export const LANGUAGES = [
         id: 3,
         name: "Python",
         icon: "skill-icons:python-light",
-        proficiency: 3, // out of 5 - 'comfortable'
+        proficiency: 4, // out of 5 - 'skilled'
     },
     {
         id: 4,
