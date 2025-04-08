@@ -1,8 +1,32 @@
 ## Portfolio Website
 
-This is my portfolio website. It is built with Next.js and TypeScript. It is hosted through AWS CloudFront and S3 using AWS Amplify.
+
+![image](https://badgen.net/static/React/18/blue)
+![image](https://badgen.net/static/Next.js/14.1.0/blue)
+![image](https://badgen.net/static/Typescript/5/blue)
+![image](https://badgen.net/static/MUI/5.15.4/blue)
+![image](https://badgen.net/static/Prettier/3.2.4/blue)
+![image](https://badgen.net/static/ESLint/8/blue)
+![image](https://badgen.net/static/AWS-Amplify/6.0.5/blue)
+
+This is an opinionated portfolio website. 
+
+It is built with Next.js and TypeScript. 
+
+This website is designed to be easily hosted through AWS CloudFront and S3 using AWS Amplify. But it can be hosted on any server.
 
 The website is available at [jacob.blazina.family](https://jacob.blazina.family).
+
+### AWS Amplify
+
+This project is created with AWS Amplify. You can quickly host and deploy your own version of this website by clicking the button below.
+
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/blazinaj/portfolio-website-template)
+
+If you would like to skip the Amplify setup, you can clone this repository and host it on your own server.
+
+See `src/data` to manually update the content of the website. If an Amplify deployment is used, the content will be automatically pulled through Amplify DataStore.
+
 
 ### Views
 

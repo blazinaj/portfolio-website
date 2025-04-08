@@ -9,7 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "next/link";
 import { useVisibilityContext } from "@/context/VisibilityContext";
-import {useDataProvider} from "@/hooks/useDataProvider";
+import { useDataProvider } from "@/hooks/useDataProvider";
 
 /**
  * Displays the following elements:
@@ -31,9 +31,7 @@ export const AboutHero = () => {
     }
   }, [isVisible, visibilityCallback]);
 
-  const {
-    CONTACT
-  } = useDataProvider();
+  const { CONTACT } = useDataProvider();
 
   return (
     <div
@@ -61,9 +59,7 @@ export const AboutHero = () => {
         {/*Bio*/}
         <h1 className="about-hero__title">Jacob Blazina</h1>
         <p ref={ref} className="about-hero__subtitle">
-          {
-            CONTACT.bio
-          }
+          {CONTACT.bio}
         </p>
 
         {/*Social Links*/}

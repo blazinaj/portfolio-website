@@ -1,9 +1,9 @@
 import React from "react";
-import {ProficiencyChipGrid} from "@/components/ProficiencyChipGrid";
-import {Technology} from "@/types/Technology";
+import { ProficiencyChipGrid } from "@/components/ProficiencyChipGrid";
+import { Technology } from "@/types/Technology";
 
 interface TechnologiesGridProps {
-    technologies: Technology[];
+  technologies: Technology[];
 }
 
 /**
@@ -31,4 +31,3 @@ export const TechnologiesGrid = ({ technologies }: TechnologiesGridProps) => {
     />
   );
 };
-

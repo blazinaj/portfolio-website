@@ -1,8 +1,8 @@
 import styles from "@/app/page.module.css";
-import {Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 import Link from "next/link";
-import {Stack} from "@mui/system";
-import {NavigationLink_T} from "@/types/NavigationLink";
+import { Stack } from "@mui/system";
+import { NavigationLink_T } from "@/types/NavigationLink";
 
 interface NavigationLinkGridProps {
   links: NavigationLink_T[];
@@ -17,11 +17,9 @@ export const NavigationLinkGrid = ({
   links,
   sx = {},
 }: NavigationLinkGridProps) => {
-
   const getLink = (link: NavigationLink_T): string => {
     return link?.href ? link.href : `#${link.id}`;
-  }
-
+  };
 
   return (
     <Grid container spacing={2} sx={sx}>

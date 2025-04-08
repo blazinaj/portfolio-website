@@ -1,8 +1,8 @@
 import React from "react";
-import {ProficiencyChipGrid} from "@/components/ProficiencyChipGrid";
+import { ProficiencyChipGrid } from "@/components/ProficiencyChipGrid";
 
 interface ProgrammingLanguagesGridProps {
-    languages: Language[];
+  languages: Language[];
 }
 
 /**
@@ -15,7 +15,9 @@ interface ProgrammingLanguagesGridProps {
  * - proficiency (optional link to a certification)
  *
  */
-export const ProgrammingLanguagesGrid = ({ languages }: ProgrammingLanguagesGridProps) => {
+export const ProgrammingLanguagesGrid = ({
+  languages,
+}: ProgrammingLanguagesGridProps) => {
   return (
     <ProficiencyChipGrid
       chips={languages.map((language: Language) => ({
@@ -27,5 +29,3 @@ export const ProgrammingLanguagesGrid = ({ languages }: ProgrammingLanguagesGrid
     />
   );
 };
-
-

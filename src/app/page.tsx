@@ -1,20 +1,20 @@
 "use client";
 
 import styles from "@/app/page.module.css";
-import {AboutHero} from "@/views/AboutHero";
+import { AboutHero } from "@/views/AboutHero";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import {SkillsList} from "@/views/SkillsList";
-import {ProjectsGridView} from "@/views/ProjectsGridView";
-import {TechnologiesGrid} from "@/views/TechnologiesGrid";
-import {WorkHistoryTimeline} from "@/views/WorkHistoryTimeline";
-import {PageStack} from "@/components/PageStack";
-import {DisciplinesGridView} from "@/views/DisciplinesGridView";
-import {HobbiesGridView} from "@/views/HobbiesGridView";
-import {NavigationSpeedDial} from "@/components/NavigationSpeedDial";
-import {EducationTimeline} from "@/views/EducationTimeline";
+import { SkillsList } from "@/views/SkillsList";
+import { ProjectsGridView } from "@/views/ProjectsGridView";
+import { TechnologiesGrid } from "@/views/TechnologiesGrid";
+import { WorkHistoryTimeline } from "@/views/WorkHistoryTimeline";
+import { PageStack } from "@/components/PageStack";
+import { DisciplinesGridView } from "@/views/DisciplinesGridView";
+import { HobbiesGridView } from "@/views/HobbiesGridView";
+import { NavigationSpeedDial } from "@/components/NavigationSpeedDial";
+import { EducationTimeline } from "@/views/EducationTimeline";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import SchoolIcon from "@mui/icons-material/School";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
@@ -22,13 +22,16 @@ import TableViewIcon from "@mui/icons-material/TableView";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
-import {ProgrammingLanguagesGrid} from "@/views/ProgrammingLanguagesGrid";
+import { ProgrammingLanguagesGrid } from "@/views/ProgrammingLanguagesGrid";
 import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
-import {useVisibilityContextState, VisibilityContextProvider,} from "@/context/VisibilityContext";
-import {useDataProvider} from "@/hooks/useDataProvider";
-import {LANGUAGES} from "@/data/LANGUAGES";
-import {SKILLS} from "@/data/SKILLS";
-import {PROJECTS} from "@/data/PROJECTS";
+import {
+  useVisibilityContextState,
+  VisibilityContextProvider,
+} from "@/context/VisibilityContext";
+import { useDataProvider } from "@/hooks/useDataProvider";
+import { LANGUAGES } from "@/data/LANGUAGES";
+import { SKILLS } from "@/data/SKILLS";
+import { PROJECTS } from "@/data/PROJECTS";
 
 /**
  * About me: linked in profile picture and link, bio with background
@@ -54,7 +57,7 @@ export default function Home() {
     TECHNOLOGIES,
     INTERESTS,
     CONTACT,
-    DISCIPLINES
+    DISCIPLINES,
   } = useDataProvider();
 
   const pageSections = [

@@ -1,9 +1,9 @@
 import React from "react";
-import {GridView} from "@/components/GridView";
-import {Interest} from "@/types/Interest";
+import { GridView } from "@/components/GridView";
+import { Interest } from "@/types/Interest";
 
 interface HobbiesGridViewProps {
-    hobbies: Interest[];
+  hobbies: Interest[];
 }
 
 /**
@@ -27,4 +27,3 @@ export const HobbiesGridView = ({ hobbies }: HobbiesGridViewProps) => {
     />
   );
 };
-

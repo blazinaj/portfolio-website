@@ -5,7 +5,7 @@ import { ReactElement, useEffect, useRef } from "react";
 import { useOnScreen } from "@/hooks/useOnScreen";
 import { Box } from "@mui/system";
 import { useVisibilityContext } from "@/context/VisibilityContext";
-import {IconComponent} from "@/components/IconComponent";
+import { IconComponent } from "@/components/IconComponent";
 
 interface PageSectionProps {
   icon?: string | ReactElement;
@@ -67,7 +67,7 @@ export const PageSection = ({
                   marginRight: "0.5em",
                 }}
               >
-                <IconComponent icon={icon}/>
+                <IconComponent icon={icon} />
               </span>
             )}
             {title}

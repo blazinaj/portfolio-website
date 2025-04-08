@@ -1,12 +1,10 @@
 import React from "react";
-import { GridView } from "../components/GridView";
-import SchoolIcon from "@mui/icons-material/School";
-import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
-import SmartphoneIcon from "@mui/icons-material/Smartphone";
-import {Project} from "@/types/Project";
+import { GridView } from "@/components/GridView";
+import { Project } from "@/types/Project";
+import { ProjectDetails } from "@/views/ProjectDetails";
 
 interface ProjectsGridViewProps {
-    projects: Project[];
+  projects: Project[];
 }
 
 /**
@@ -25,14 +23,14 @@ export const ProjectsGridView = ({ projects }: ProjectsGridViewProps) => {
         title: project.name,
         subTitle: project.description,
         icon: project.icon,
+        logo: project.logo,
         link: project.link,
+        component: <ProjectDetails projectId={project.id} />,
         gridProps: {
-          lg: 12,
+          lg: 6,
           sm: 12,
         },
       }))}
     />
   );
 };
-
-

@@ -1,9 +1,9 @@
 import React from "react";
-import {GridView} from "@/components/GridView";
-import {Discipline} from "@/types/Discipline";
+import { GridView } from "@/components/GridView";
+import { Discipline } from "@/types/Discipline";
 
 interface DisciplineGridViewProps {
-    disciplines: Discipline[];
+  disciplines: Discipline[];
 }
 
 /**
@@ -17,7 +17,9 @@ interface DisciplineGridViewProps {
  * @param projects
  * @constructor
  */
-export const DisciplinesGridView = ({ disciplines }: DisciplineGridViewProps) => {
+export const DisciplinesGridView = ({
+  disciplines,
+}: DisciplineGridViewProps) => {
   return (
     <GridView
       items={disciplines.map((discipline) => ({
