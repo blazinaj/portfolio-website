@@ -2,7 +2,7 @@ import { Project } from "@/types/Project";
 
 export const PROJECTS: Project[] = [
   {
-    id: 0,
+    id: "0",
     name: "Porfolio Website",
     description: "This website! A Next.js app hosted on AWS Amplify.",
     technologies: [
