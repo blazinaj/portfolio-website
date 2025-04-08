@@ -44,6 +44,7 @@ export const GridView = ({ items = [] }: GridViewProps) => {
           {...getBreakpoints()}
           {...(item.gridProps || {})}
         >
+          {/*@ts-ignore*/}
           <Accordion
             expanded={selected === item.title}
             id={item.title}
