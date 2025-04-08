@@ -7,4 +7,6 @@ type GridView_T = {
   icon?: string | ReactElement | null;
   gridProps?: object;
   link?: string;
+  logo?: string;
+  component?: ReactElement | null;
 };
