@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useState } from "react";
 
 const VisibilityContext = createContext({
@@ -10,7 +12,7 @@ const VisibilityContextProvider = VisibilityContext.Provider;
 const useVisibilityContextState = () => {
   const [visibleSection, setVisibleSection] = useState("about-hero");
 
-  const visibilityCallback = (id: string | number, isVisible: any) => {
+  const visibilityCallback = (id: string | number, isVisible: boolean) => {
     if (isVisible) {
       setVisibleSection(id.toString());
     }
@@ -26,7 +28,7 @@ const useVisibilityContext = () => {
   const context = useContext(VisibilityContext);
   if (context === undefined) {
     throw new Error(
-      "useVisibilityContext must be used within a VisibilityContextProvider",
+      "useVisibilityContext must be used within a VisibilityContextProvider"
     );
   }
   return context;

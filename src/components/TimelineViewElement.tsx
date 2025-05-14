@@ -16,14 +16,16 @@ export const TimelineViewElement = ({
   includeSeparator = false,
   event,
 }: TimelineViewElementProps) => {
-  const { title, subTitle, date, secondary } = event;
+  const { title, subTitle, date, secondary, onClick } = event;
 
   return (
     <TimelineItem
       style={{
         color: secondary ? "grey" : undefined,
         fontSize: secondary ? "0.8rem" : undefined,
+        cursor: onClick ? "pointer" : "default",
       }}
+      onClick={onClick}
     >
       <TimelineOppositeContent color="text.info">
         {date}

@@ -2,7 +2,7 @@ export const EXPERIENCE = [
   {
     id: "0",
     date: "March 2024 - Current",
-    title: "Senior Application Developer",
+    title: "Manager, Application Development",
     subTitle: "Aetna, a CVS Health Company",
   },
   {

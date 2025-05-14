@@ -5,4 +5,5 @@ type ProficiencyChip_T = {
   icon?: string | ReactElement;
   label: string | ReactElement;
   proficiency?: number;
+  link?: string;
 };

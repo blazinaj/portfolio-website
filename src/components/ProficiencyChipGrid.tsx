@@ -4,6 +4,7 @@ import { Typography } from "@mui/material";
 import { ProficiencyChip_T } from "@/types/ProficiencyChip";
 import { ProficiencyProgress } from "@/components/ProficiencyProgress";
 import { IconComponent } from "@/components/IconComponent";
+import Link from "next/link";
 
 interface ProficiencyChipGridProps {
   chips: ProficiencyChip_T[];
@@ -26,35 +27,63 @@ export const ProficiencyChipGrid = ({ chips }: ProficiencyChipGridProps) => {
         return "Unknown";
     }
   };
+  
   const formatChipInput = (chip: ProficiencyChip_T) => {
-    return {
-      id: chip.id,
-      label: (
-        <Box
-          title={proficiencyText(chip.proficiency)}
-          sx={{
-            width: "100%",
+    const content = (
+      <Box
+        title={proficiencyText(chip.proficiency)}
+        sx={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          minHeight: "40px",
+        }}
+      >
+        <Box 
+          sx={{ 
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
-            gap: "10px",
+            fontSize: "1.5em",
+            minWidth: "32px"
           }}
         >
-          <Box sx={{ fontSize: "2em", flexGrow: 1 }}>
-            <IconComponent icon={chip.icon} />
-          </Box>
-          <Box
+          <IconComponent icon={chip.icon} />
+        </Box>
+        <Box
+          sx={{
+            flex: "1 1 auto",
+            minWidth: 0, // Enable text truncation
+          }}
+        >
+          <Typography 
+            noWrap 
             sx={{
-              flexGrow: 1,
+              fontSize: "0.9rem",
+              lineHeight: "1.2"
             }}
           >
-            <Typography>{chip.label}</Typography>
-          </Box>
-          <Box>
-            <ProficiencyProgress proficiency={chip.proficiency} />
-          </Box>
+            {chip.label}
+          </Typography>
         </Box>
-      ),
+        <Box sx={{ 
+          flex: "0 0 auto",
+          display: "flex",
+          alignItems: "center",
+          paddingLeft: "8px"
+        }}>
+          <ProficiencyProgress proficiency={chip.proficiency} />
+        </Box>
+      </Box>
+    );
+
+    return {
+      id: chip.id,
+      label: chip.link ? (
+        <Link href={chip.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
+          {content}
+        </Link>
+      ) : content,
     };
   };
 

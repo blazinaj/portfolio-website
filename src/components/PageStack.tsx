@@ -33,8 +33,8 @@ export const PageStack = ({
   visibilityCallback,
 }: PageStackProps) => {
   return (
-    <Stack direction={"column"} spacing={2} alignItems={"center"}>
-      <PageSection id={"about-hero"}>
+    <Stack direction="column" spacing={2} alignItems="center">
+      <PageSection id="about-hero">
         <Grid container spacing={4}>
           <Grid item lg={12}>
             {homeSection}

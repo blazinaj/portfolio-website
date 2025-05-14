@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import { GridView_T } from "@/types/GridView";
-
 import IconButton from "@mui/material/IconButton";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Link from "next/link";
@@ -34,9 +33,8 @@ export const GridView = ({ items = [] }: GridViewProps) => {
     };
   };
 
-  // @ts-ignore
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={1}>
       {items.map((item: GridView_T) => (
         <Grid
           key={item.title}
@@ -44,7 +42,6 @@ export const GridView = ({ items = [] }: GridViewProps) => {
           {...getBreakpoints()}
           {...(item.gridProps || {})}
         >
-          {/*@ts-ignore*/}
           <Accordion
             expanded={selected === item.title}
             id={item.title}
@@ -52,36 +49,46 @@ export const GridView = ({ items = [] }: GridViewProps) => {
             sx={{
               color: "white",
               backgroundColor: "#000000",
-              padding: "0.5em",
+              padding: "0.25em",
               maxWidth: "100%",
+              cursor: item.onClick ? "pointer" : "default",
+              margin: "4px 0",
+              '& .MuiAccordionSummary-content': {
+                margin: '8px 0',
+              }
+            }}
+            onClick={() => {
+              if (item.onClick) {
+                item.onClick();
+              } else {
+                setSelected((prev) => (prev === item.title ? null : item.title));
+              }
             }}
           >
             <AccordionSummary>
               <ListItem
                 alignItems="flex-start"
-                onClick={() => {
-                  //@ts-ignore
-                  setSelected((prev) =>
-                    prev === item.title ? null : item.title,
-                  );
-                }}
                 sx={{
+                  padding: { xs: '4px', sm: '8px' },
                   "&.Mui-expanded": {
                     backgroundColor: "#000000",
                     color: "white",
                   },
-                  cursor: "pointer",
                 }}
                 secondaryAction={
                   item?.link && (
                     <IconButton
                       edge="end"
                       aria-label="comments"
-                      sx={{ color: "white" }}
+                      sx={{ 
+                        color: "white",
+                        padding: { xs: '4px', sm: '8px' }
+                      }}
                       component={Link}
                       href={item?.link}
                       rel="noopener noreferrer"
                       target="_blank"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <LaunchIcon />
                     </IconButton>
@@ -89,7 +96,14 @@ export const GridView = ({ items = [] }: GridViewProps) => {
                 }
               >
                 <ListItemAvatar>
-                  <Avatar sx={{ bgcolor: "#000000" }} src={item?.logo}>
+                  <Avatar 
+                    sx={{ 
+                      bgcolor: "#000000",
+                      width: { xs: 32, sm: 40 },
+                      height: { xs: 32, sm: 40 }
+                    }} 
+                    src={item?.logo}
+                  >
                     {typeof item.icon === "string" && <Icon icon={item.icon} />}
                   </Avatar>
                 </ListItemAvatar>
@@ -97,12 +111,18 @@ export const GridView = ({ items = [] }: GridViewProps) => {
                   primary={item.title}
                   sx={{
                     width: "100%",
+                    '& .MuiTypography-root': {
+                      fontSize: { xs: '0.9rem', sm: '1rem' }
+                    }
                   }}
                   secondary={
                     <React.Fragment>
                       <hr />
                       <Typography
-                        sx={{ width: "100%" }}
+                        sx={{ 
+                          width: "100%",
+                          fontSize: { xs: '0.8rem', sm: '0.9rem' }
+                        }}
                         component="span"
                         variant="body2"
                         color="white"
@@ -114,7 +134,9 @@ export const GridView = ({ items = [] }: GridViewProps) => {
                 />
               </ListItem>
             </AccordionSummary>
-            <AccordionDetails>{item.component}</AccordionDetails>
+            {!item.onClick && item.component && (
+              <AccordionDetails>{item.component}</AccordionDetails>
+            )}
           </Accordion>
         </Grid>
       ))}

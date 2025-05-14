@@ -18,7 +18,6 @@ interface TechnologiesGridProps {
  * @param technologies
  * @constructor
  */
-// @ts-ignore
 export const TechnologiesGrid = ({ technologies }: TechnologiesGridProps) => {
   return (
     <ProficiencyChipGrid
@@ -27,6 +26,7 @@ export const TechnologiesGrid = ({ technologies }: TechnologiesGridProps) => {
         label: technology.name,
         icon: technology.icon,
         proficiency: technology.proficiency,
+        link: technology.link,
       }))}
     />
   );

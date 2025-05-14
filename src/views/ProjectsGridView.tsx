@@ -1,21 +1,15 @@
 import React from "react";
 import { GridView } from "@/components/GridView";
 import { Project } from "@/types/Project";
-import { ProjectDetails } from "@/views/ProjectDetails";
+import { useRouter } from "next/navigation";
 
 interface ProjectsGridViewProps {
   projects: Project[];
 }
 
-/**
- * Vertical list of projects.
- *
- * Each element has:
- * - icon
- * - name
- * - chips for the technologies used in the project.
- */
 export const ProjectsGridView = ({ projects }: ProjectsGridViewProps) => {
+  const router = useRouter();
+
   return (
     <GridView
       items={projects.map((project: Project) => ({
@@ -25,7 +19,7 @@ export const ProjectsGridView = ({ projects }: ProjectsGridViewProps) => {
         icon: project.icon,
         logo: project.logo,
         link: project.link,
-        component: <ProjectDetails projectId={project.id} />,
+        onClick: () => router.push(`/project/${project.id}`),
         gridProps: {
           lg: 6,
           sm: 12,

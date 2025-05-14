@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { TimelineView } from "@/components/TimelineView";
+import { useRouter } from "next/navigation";
 
 interface WorkHistoryTimelineProps {
   experience: any[];
@@ -9,5 +10,14 @@ interface WorkHistoryTimelineProps {
 export const WorkHistoryTimeline = ({
   experience,
 }: WorkHistoryTimelineProps) => {
-  return <TimelineView events={experience} />;
+  const router = useRouter();
+  
+  return (
+    <TimelineView
+      events={experience.map((exp) => ({
+        ...exp,
+        onClick: () => router.push(`/work/${exp.id}`),
+      }))}
+    />
+  );
 };

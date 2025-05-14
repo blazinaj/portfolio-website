@@ -4,4 +4,5 @@ export type TimelineEvent_T = {
   subTitle: string;
   date: string;
   secondary?: boolean;
+  onClick?: () => void;
 };

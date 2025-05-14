@@ -9,4 +9,5 @@ type GridView_T = {
   link?: string;
   logo?: string;
   component?: ReactElement | null;
+  onClick?: () => void;
 };

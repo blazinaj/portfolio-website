@@ -24,30 +24,45 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import { ProgrammingLanguagesGrid } from "@/views/ProgrammingLanguagesGrid";
 import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
+import { Suspense, useEffect, useState } from "react";
 import {
   useVisibilityContextState,
   VisibilityContextProvider,
 } from "@/context/VisibilityContext";
 import { useDataProvider } from "@/hooks/useDataProvider";
-import { LANGUAGES } from "@/data/LANGUAGES";
-import { SKILLS } from "@/data/SKILLS";
-import { PROJECTS } from "@/data/PROJECTS";
 
-/**
- * About me: linked in profile picture and link, bio with background
- *
- * Work History: timeline view of work history with links to the companies
- *
- * Projects: Radial or List View of projects with links to the project overview page. Edify, Thoughtify, Printify, Smart Mirror
- *
- * Skills: list of skills and languages, with some sort of proficiency indicator
- *
- * Technologies: List of software applications and tools such as AWS, Jira, GitHub, etc
- *
- */
+// Separate loading component for better error boundary handling
+function LoadingFallback() {
+  return <div>Loading...</div>;
+}
+
+function PageContent({ visibilityContextState, pageSections }) {
+  // Ensure data is only rendered on client side
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return <LoadingFallback />;
+  }
+
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <PageStack
+        homeSection={<AboutHero />}
+        pageSections={pageSections}
+        visibilityCallback={visibilityContextState.visibilityCallback}
+      />
+      <NavigationSpeedDial pages={pageSections} />
+    </Suspense>
+  );
+}
+
 export default function Home() {
   const visibilityContextState = useVisibilityContextState();
-
+  
   const {
     LANGUAGES,
     SKILLS,
@@ -131,12 +146,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <VisibilityContextProvider value={visibilityContextState}>
-        <PageStack
-          homeSection={<AboutHero />}
+        <PageContent 
+          visibilityContextState={visibilityContextState}
           pageSections={pageSections}
-          visibilityCallback={visibilityContextState.visibilityCallback}
         />
-        <NavigationSpeedDial pages={pageSections} />
       </VisibilityContextProvider>
     </main>
   );
