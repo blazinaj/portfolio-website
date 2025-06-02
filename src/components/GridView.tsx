@@ -13,9 +13,8 @@ import React from "react";
 import { GridView_T } from "@/types/GridView";
 import IconButton from "@mui/material/IconButton";
 import LaunchIcon from "@mui/icons-material/Launch";
-import Link from "next/link";
 import { Icon } from "@iconify/react";
-import styles from "@/app/page.module.css";
+import styles from "../styles/Home.module.css";
 
 interface GridViewProps {
   items: GridView_T[];
@@ -37,14 +36,15 @@ export const GridView = ({ items = [] }: GridViewProps) => {
     <Grid container spacing={1}>
       {items.map((item: GridView_T) => (
         <Grid
-          key={item.title}
+          key={item.id}
           item
           {...getBreakpoints()}
           {...(item.gridProps || {})}
         >
           <Accordion
+            component="div"
             expanded={selected === item.title}
-            id={item.title}
+            id={item.id.toString()}
             className={styles.card}
             sx={{
               color: "white",
@@ -61,7 +61,7 @@ export const GridView = ({ items = [] }: GridViewProps) => {
               if (item.onClick) {
                 item.onClick();
               } else {
-                setSelected((prev) => (prev === item.title ? null : item.title));
+                setSelected((prev) => (prev === item.title ? null : (item.title ?? null)));
               }
             }}
           >
@@ -84,7 +84,7 @@ export const GridView = ({ items = [] }: GridViewProps) => {
                         color: "white",
                         padding: { xs: '4px', sm: '8px' }
                       }}
-                      component={Link}
+                      component="a"
                       href={item?.link}
                       rel="noopener noreferrer"
                       target="_blank"

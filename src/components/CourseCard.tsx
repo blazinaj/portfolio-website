@@ -1,6 +1,5 @@
 import { Card, CardContent, CardActionArea, Typography, Chip, Stack, Box } from "@mui/material";
 import { Course } from "@/types/Course";
-import Link from "next/link";
 
 interface CourseCardProps {
   course: Course;
@@ -17,7 +16,7 @@ export const CourseCard = ({ course }: CourseCardProps) => {
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)"
       }
     }}>
-      <CardActionArea component={Link} href={course.link || "#"} target="_blank">
+      <CardActionArea component="a" href={course.link || "#"} target="_blank">
         <CardContent>
           <Stack spacing={2}>
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>

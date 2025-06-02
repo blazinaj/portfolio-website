@@ -1,14 +1,12 @@
-"use client";
-
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import HomeIcon from "@mui/icons-material/Home";
-import { useVisibilityContext } from "@/context/VisibilityContext";
-import { PageSection_T } from "@/types/PageSection";
-import { IconComponent } from "@/components/IconComponent";
+import { useVisibilityContext } from "../context/VisibilityContext";
+import { PageSection_T } from "../types/PageSection";
+import { IconComponent } from "./IconComponent";
 
 const variants = {
   open: { opacity: 1, x: 0 },
@@ -21,14 +19,31 @@ interface NavigationSpeedDialProps {
 
 /**
  * A floating action button that is designed to be used as a simple section-based navigation menu.
- *
- * @param {PageSection_T[]} pages - The pages to display for the speed dial
- * @constructor
  */
 export const NavigationSpeedDial = ({ pages }: NavigationSpeedDialProps) => {
-  const router = useRouter();
-
+  const navigate = useNavigate();
   const { visibleSection } = useVisibilityContext();
+
+  const handleNavigation = (href: string | undefined) => {
+    if (!href) return;
+    
+    // Handle navigation to anchor links
+    if (href.startsWith('#')) {
+      // Navigate to the root with the hash
+      navigate('/');
+      
+      // Wait for navigation to complete then scroll to element
+      setTimeout(() => {
+        const element = document.getElementById(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Normal navigation
+      navigate(href);
+    }
+  };
 
   return (
     <Box
@@ -39,6 +54,7 @@ export const NavigationSpeedDial = ({ pages }: NavigationSpeedDialProps) => {
         position: "fixed",
         top: 16,
         right: 16,
+        zIndex: 1000,
       }}
     >
       <motion.nav
@@ -47,14 +63,14 @@ export const NavigationSpeedDial = ({ pages }: NavigationSpeedDialProps) => {
         whileInView={{ opacity: 1 }}
       >
         <SpeedDial
-          ariaLabel="SpeedDial controlled open example"
+          ariaLabel="Navigation SpeedDial"
           icon={<HomeIcon />}
           open={visibleSection !== "about-hero"}
           direction={"down"}
           hidden={visibleSection === "about-hero"}
           FabProps={{
             onClick: () => {
-              router.push("/#about-hero");
+              handleNavigation("#about-hero");
             },
           }}
         >
@@ -68,7 +84,7 @@ export const NavigationSpeedDial = ({ pages }: NavigationSpeedDialProps) => {
                 color: page.id === visibleSection ? "black" : undefined,
               }}
               onClick={() => {
-                router.push(`/${page.href}`);
+                handleNavigation(page.href);
               }}
             />
           ))}

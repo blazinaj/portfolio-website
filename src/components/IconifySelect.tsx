@@ -1,9 +1,7 @@
-import Script from "next/script";
-
 export const IconifySelect = () => {
   return (
     <div>
-      <Script src="https://cdn.jsdelivr.net/npm/iconify-select-plugin@1/iconify-select-plugin.min.js" />
+      <script src="https://cdn.jsdelivr.net/npm/iconify-select-plugin@1/iconify-select-plugin.min.js"></script>
       <button
         className="iconify-open-dialog"
         data-icon-input="iconify-select"

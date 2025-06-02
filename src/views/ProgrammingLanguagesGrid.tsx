@@ -1,5 +1,6 @@
 import React from "react";
 import { ProficiencyChipGrid } from "@/components/ProficiencyChipGrid";
+import { Language } from "@/types/Language";
 
 interface ProgrammingLanguagesGridProps {
   languages: Language[];

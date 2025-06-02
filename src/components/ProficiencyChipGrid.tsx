@@ -4,7 +4,6 @@ import { Typography } from "@mui/material";
 import { ProficiencyChip_T } from "@/types/ProficiencyChip";
 import { ProficiencyProgress } from "@/components/ProficiencyProgress";
 import { IconComponent } from "@/components/IconComponent";
-import Link from "next/link";
 
 interface ProficiencyChipGridProps {
   chips: ProficiencyChip_T[];
@@ -80,9 +79,9 @@ export const ProficiencyChipGrid = ({ chips }: ProficiencyChipGridProps) => {
     return {
       id: chip.id,
       label: chip.link ? (
-        <Link href={chip.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
+        <a href={chip.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
           {content}
-        </Link>
+        </a>
       ) : content,
     };
   };

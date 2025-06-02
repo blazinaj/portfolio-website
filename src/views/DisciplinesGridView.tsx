@@ -1,7 +1,7 @@
 import React from "react";
-import { GridView } from "@/components/GridView";
-import { Discipline } from "@/types/Discipline";
-import { useRouter } from "next/navigation";
+import { GridView } from "../components/GridView";
+import { Discipline } from "../types/Discipline";
+import { useNavigate } from "react-router-dom";
 
 interface DisciplineGridViewProps {
   disciplines: Discipline[];
@@ -10,7 +10,7 @@ interface DisciplineGridViewProps {
 export const DisciplinesGridView = ({
   disciplines,
 }: DisciplineGridViewProps) => {
-  const router = useRouter();
+  const navigate = useNavigate();
 
   return (
     <GridView
@@ -19,7 +19,7 @@ export const DisciplinesGridView = ({
         title: discipline.name,
         subTitle: discipline.description,
         icon: discipline.icon,
-        onClick: () => router.push(`/discipline/${discipline.id}`),
+        onClick: () => navigate(`/discipline/${discipline.id}`),
       }))}
     />
   );

@@ -1,3 +1,9 @@
+import { Language } from "@/types/Language";
+
+interface LanguagesListProps {
+  languages: Language[];
+}
+
 /**
  * List of programming languages. Each element has:
  * - name
@@ -9,12 +15,10 @@
  * @param languages
  * @constructor
  */
-// @ts-ignore
-export const LanguagesList = ({ languages }) => {
+export const LanguagesList = ({ languages }: LanguagesListProps) => {
   return (
     <div className="languages-list">
       {
-        // @ts-ignore
         languages.map((language) => (
           <span key={language.id} className="language">
             {language.name}

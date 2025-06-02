@@ -1,15 +1,11 @@
-"use client";
-
-import Image from "next/image";
 import { IconButton, Stack } from "@mui/material";
-import { useEffect, useRef } from "react";
-import { useOnScreen } from "@/hooks/useOnScreen";
+import { useEffect, useRef, useState } from "react";
+import { useOnScreen } from "../hooks/useOnScreen";
 import { Facebook } from "@mui/icons-material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Link from "next/link";
-import { useVisibilityContext } from "@/context/VisibilityContext";
-import { useDataProvider } from "@/hooks/useDataProvider";
+import { useVisibilityContext } from "../context/VisibilityContext";
+import { useDataProvider } from "../hooks/useDataProvider";
 
 /**
  * Displays the following elements:
@@ -32,6 +28,7 @@ export const AboutHero = () => {
   }, [isVisible, visibilityCallback]);
 
   const { CONTACT } = useDataProvider();
+  const [imgError, setImgError] = useState(false);
 
   return (
     <div
@@ -45,14 +42,20 @@ export const AboutHero = () => {
           style={{
             borderRadius: "50%",
             overflow: "hidden",
+            position: "relative",
+            width: 180,
+            height: 180
           }}
         >
-          <Image
+          <img
             src="/Profile.jpg"
-            alt="Next.js Logo"
-            width={180}
-            height={180}
-            priority
+            alt="Profile"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover"
+            }}
+            onError={() => setImgError(true)}
           />
         </div>
 
@@ -66,27 +69,27 @@ export const AboutHero = () => {
         <Stack direction={"row"}>
           <IconButton
             color={"primary"}
-            component={Link}
             href={CONTACT.facebook}
             target={"_blank"}
+            component="a"
           >
             <Facebook />
           </IconButton>
 
           <IconButton
             color={"primary"}
-            component={Link}
             href={CONTACT.linkedIn}
             target={"_blank"}
+            component="a"
           >
             <LinkedInIcon />
           </IconButton>
 
           <IconButton
             color={"primary"}
-            component={Link}
             href={CONTACT.gitHub}
             target={"_blank"}
+            component="a"
           >
             <GitHubIcon />
           </IconButton>

@@ -1,22 +1,22 @@
-"use client";
 import React from "react";
-import { TimelineView } from "@/components/TimelineView";
-import { useRouter } from "next/navigation";
+import { TimelineView } from "../components/TimelineView";
+import { useNavigate } from "react-router-dom";
+import { TimelineEvent_T } from "../types/TimelineEvent";
 
 interface WorkHistoryTimelineProps {
-  experience: any[];
+  experience: TimelineEvent_T[];
 }
 
 export const WorkHistoryTimeline = ({
   experience,
 }: WorkHistoryTimelineProps) => {
-  const router = useRouter();
+  const navigate = useNavigate();
   
   return (
     <TimelineView
       events={experience.map((exp) => ({
         ...exp,
-        onClick: () => router.push(`/work/${exp.id}`),
+        onClick: () => navigate(`/work/${exp.id}`),
       }))}
     />
   );

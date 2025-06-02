@@ -1,7 +1,6 @@
-import styles from "@/app/page.module.css";
-import { useDataProvider } from "@/hooks/useDataProvider";
+import { useDataProvider } from "../hooks/useDataProvider";
 import React, { useMemo } from "react";
-import { ProjectFeature } from "@/types/ProjectFeature";
+import { ProjectFeature } from "../types/ProjectFeature";
 import { Stack } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 
@@ -11,21 +10,6 @@ interface ProjectDetailsProps {
 
 /**
  * Displays detailed information about a specific portfolio project.
- *
- * Includes:
- *
- * - Project name
- * - Project description
- * - Project status
- * - Project start date
- * - Project end date
- * - Technologies used
- * - Project Logo
- * - Project Board
- * - Project Designs
- * - Project Features
- *
- * @constructor
  */
 export const ProjectDetails = ({ projectId }: ProjectDetailsProps) => {
   const { PROJECTS } = useDataProvider();
@@ -47,26 +31,32 @@ export interface ProjectFeaturesProps {
 
 /**
  * Carousel view of Project Features
- * @constructor
  */
 export const ProjectFeatures = ({ features }: ProjectFeaturesProps) => {
+  if (!features || features.length === 0) {
+    return null;
+  }
+  
   return (
     <Carousel autoPlay={false}>
-      {features?.map((feature, index) => (
+      {features.map((feature, index) => (
         <div key={index} style={{ width: "100%" }}>
           <Stack style={{ width: "100%" }} spacing={2}>
-            <h2 className={styles.carouselItemTitle}>{feature.name}</h2>
+            <h2 className="carouselItemTitle">{feature.name}</h2>
             <h4
               style={{ width: "100%" }}
-              className={styles.carouselItemDescription}
+              className="carouselItemDescription"
             >
               {feature.description}
             </h4>
-            <img
-              src={feature.image}
-              alt={feature.name}
-              className={styles.carouselItemImage}
-            />
+            {feature.image && (
+              <img
+                src={feature.image}
+                alt={feature.name}
+                className="carouselItemImage"
+                style={{ maxWidth: "100%", height: "auto" }}
+              />
+            )}
           </Stack>
         </div>
       ))}

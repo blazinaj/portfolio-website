@@ -17,7 +17,7 @@ export const WORK_EXPERIENCES = {
     {
       id: 3,
       description: "Managing application development projects using agile methodologies",
-      technologies: ["Jira", "Confluence", "ServiceNow"],
+      technologies: ["Jira", "Confluence"],
       skills: ["Agile", "Scrum", "Project Management"],
       date: "2024"
     },
@@ -31,7 +31,7 @@ export const WORK_EXPERIENCES = {
     {
       id: 5,
       description: "Developing frontends for big-data applications",
-      technologies: ["React", "Python", "Mantine", "Plotly Dash"],
+      technologies: ["React", "TypeScript", "Material UI"],
       skills: ["Frontend Development", "UX Design"],
       date: "2024"
     },
@@ -47,13 +47,6 @@ export const WORK_EXPERIENCES = {
       description: "Creating comprehensive technical documentation for systems and processes",
       technologies: ["Confluence", "Markdown", "Draw.io"],
       skills: ["Technical Writing", "Documentation", "Process Building"],
-      date: "2024"
-    },
-    {
-      id: 7,
-      description: "Connecting Data to Frontend components using BigQuery",
-      technologies: ["BigQuery", "Python", "React"],
-      skills: ["Data Integration", "Frontend Development"],
       date: "2024"
     }
   ],

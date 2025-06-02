@@ -100,18 +100,19 @@ export const PROJECTS: Project[] = [
   {
     id: "0",
     name: "Portfolio Website",
-    description: "This website! A Next.js app hosted on AWS Amplify.",
+    description: "This website! A responsive portfolio built with React, TypeScript, and Vite, featuring a modern Material UI design.",
     technologies: [
       { id: 0, name: "React" },
       { id: 1, name: "TypeScript" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "AWS Amplify" },
-      { id: 4, name: "AWS DynamoDB" },
-      { id: 5, name: "AWS CloudFront" },
-      { id: 6, name: "AWS WAF" },
+      { id: 2, name: "Vite" },
+      { id: 3, name: "Material UI" },
+      { id: 4, name: "React Router" },
+      { id: 5, name: "Framer Motion" },
+      { id: 6, name: "AWS Amplify" },
     ],
     link: "https://github.com/blazinaj/portfolio-website",
     logo: "Profile.jpg",
+    featured: false,
     features: [
       {
         id: 0,
@@ -128,7 +129,7 @@ export const PROJECTS: Project[] = [
       {
         id: 2,
         name: "AWS Integration",
-        description: "Seamless deployment and hosting using AWS Amplify and CloudFront",
+        description: "Seamless deployment and hosting using AWS Amplify",
         icon: "material-symbols:cloud"
       }
     ]
@@ -152,7 +153,10 @@ export const PROJECTS: Project[] = [
       { id: 10, name: "AWS Cognito" },
       { id: 11, name: "AWS AppSync" },
     ],
-    link: "https://edify.mobi",
+    link: "https://github.com/blazinaj/edify",
+    githubLink: "https://github.com/blazinaj/edify",
+    webLink: "https://edify.mobi",
+    featured: true,
     features: [
       {
         id: 0,
@@ -177,32 +181,47 @@ export const PROJECTS: Project[] = [
   {
     id: "2",
     name: "Persona",
-    description: "Create, customize, and manage AI agents with different personalities and skill sets.",
+    description: "Create, customize, and manage AI agents with different personalities and skill sets. An advanced platform for personalized AI interactions.",
     technologies: [
       { id: 0, name: "React" },
       { id: 1, name: "TypeScript" },
       { id: 2, name: "OpenAI" },
+      { id: 3, name: "Node.js" },
+      { id: 4, name: "WebSockets" },
     ],
     link: "https://github.com/blazinaj/persona",
     icon: "material-symbols:person",
+    featured: true,
     features: [
       {
         id: 0,
-        name: "AI Agent Creation",
-        description: "Create and customize AI agents with unique personalities",
+        name: "Persona Creation",
+        description: "Define personality traits, knowledge areas, communication style with AI assistance for batch generation and voice configuration",
         icon: "material-symbols:person-add"
       },
       {
         id: 1,
-        name: "Skill Management",
-        description: "Define and manage agent capabilities and knowledge domains",
-        icon: "material-symbols:psychology"
+        name: "Advanced Chat Features",
+        description: "End-to-end encrypted messaging, voice I/O, PDF generation, image creation, interactive elements, and smart context-aware suggestions",
+        icon: "material-symbols:chat"
       },
       {
         id: 2,
-        name: "Conversation History",
-        description: "Track and analyze interactions with AI agents",
-        icon: "material-symbols:history"
+        name: "Collaborative Spaces",
+        description: "Public/private environments with multiple personas, custom coordinator instructions, and persistent context memory system",
+        icon: "material-symbols:groups"
+      },
+      {
+        id: 3,
+        name: "Customization & Extensions",
+        description: "Custom JavaScript functions, knowledge base management, memory systems, and API integration for extended functionality",
+        icon: "material-symbols:settings-applications"
+      },
+      {
+        id: 4,
+        name: "Security & User Management",
+        description: "End-to-end encryption, secure authentication, public/private profiles, and persona sharing with usage analytics",
+        icon: "material-symbols:security"
       }
     ]
   },
@@ -279,7 +298,9 @@ export const PROJECTS: Project[] = [
       { id: 2, name: "Material UI" },
     ],
     link: "https://github.com/blazinaj/roboconfig",
+    webLink: "https://roboconfig.com",
     icon: "material-symbols:smart-toy",
+    featured: true,
     features: [
       {
         id: 0,
@@ -370,8 +391,11 @@ export const PROJECTS: Project[] = [
     name: "Thoughtify",
     description: "An AI-powered web application for journaling and self-reflection. Extracts insights, emotions, and topics from journal entries. Generate journals, health reports, and biographies.",
     icon: "history-icon",
-    link: "https://thoughts.mobi",
+    link: "https://github.com/blazinaj/thoughtify",
+    githubLink: "https://github.com/blazinaj/thoughtify",
+    webLink: "https://thoughts.mobi",
     logo: "images/ThoughtifyLogo.png",
+    featured: true,
     features: [
       {
         id: 0,
@@ -398,6 +422,7 @@ export const PROJECTS: Project[] = [
     name: "Smart Mirror",
     description: "Computer Science undergrad senior project. A smart mirror that displays the time, weather, and news headlines. Face recognition login, voice commands, and gesture controls.",
     icon: "mirror-icon",
+    link: "https://github.com/blazinaj/smart-mirror",
     features: [
       {
         id: 0,

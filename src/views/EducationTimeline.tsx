@@ -1,14 +1,14 @@
 import React from "react";
-import { TimelineView } from "@/components/TimelineView";
-import { Education } from "@/types/Education";
-import { useRouter } from "next/navigation";
+import { TimelineView } from "../components/TimelineView";
+import { Education } from "../types/Education";
+import { useNavigate } from "react-router-dom";
 
 interface EducationTimelineProps {
   education: Education[];
 }
 
 export const EducationTimeline = ({ education }: EducationTimelineProps) => {
-  const router = useRouter();
+  const navigate = useNavigate();
 
   return (
     <TimelineView
@@ -17,7 +17,7 @@ export const EducationTimeline = ({ education }: EducationTimelineProps) => {
         title: edu.title,
         subTitle: edu.subTitle,
         date: edu.date,
-        onClick: () => router.push(`/education/${edu.id}`),
+        onClick: () => navigate(`/education/${edu.id}`),
       }))}
     />
   );
