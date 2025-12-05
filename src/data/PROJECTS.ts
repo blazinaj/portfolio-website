@@ -2,6 +2,147 @@ import { Project } from "@/types/Project";
 
 export const PROJECTS: Project[] = [
   {
+    id: "14",
+    name: "Product Pilot",
+    description: "All-in-one product management tool and SaaS launchpad with seamless AI integration into every feature. Manage your entire product lifecycle from vision to revenue.",
+    technologies: [
+      { id: 0, name: "React" },
+      { id: 1, name: "TypeScript" },
+      { id: 2, name: "Node.js" },
+      { id: 3, name: "OpenAI" },
+      { id: 4, name: "Material UI" },
+    ],
+    link: "https://github.com/blazinaj/product-pilot",
+    icon: "material-symbols:rocket-launch",
+    featured: true,
+    features: [
+      {
+        id: 0,
+        name: "Product Scoring & Vision",
+        description: "AI-powered product scoring with comprehensive vision and goal tracking",
+        icon: "material-symbols:analytics"
+      },
+      {
+        id: 1,
+        name: "Market Intelligence",
+        description: "Competitor analysis, personas, and use case management",
+        icon: "material-symbols:psychology"
+      },
+      {
+        id: 2,
+        name: "Feature & QA Management",
+        description: "Complete feature tracking with integrated QA testing and UX surveys",
+        icon: "material-symbols:checklist"
+      },
+      {
+        id: 3,
+        name: "Revenue & Support",
+        description: "Revenue tracking, customer support tools, and knowledge base management",
+        icon: "material-symbols:support-agent"
+      },
+      {
+        id: 4,
+        name: "Brand & Marketing",
+        description: "Brand identity management and marketing reach analytics",
+        icon: "material-symbols:campaign"
+      }
+    ]
+  },
+  {
+    id: "15",
+    name: "LearnIt",
+    description: "AI-powered learning feed with dynamic content generation. Cross-platform app featuring gamified microlearning, intelligent feed algorithms, quizzes, and achievements.",
+    technologies: [
+      { id: 0, name: "React" },
+      { id: 1, name: "React Native" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "OpenAI" },
+      { id: 4, name: "Node.js" },
+    ],
+    link: "https://github.com/blazinaj/learnit",
+    icon: "material-symbols:school",
+    featured: true,
+    features: [
+      {
+        id: 0,
+        name: "Dynamic Content Generation",
+        description: "AI-powered learning content tailored to your interests and level",
+        icon: "material-symbols:auto-awesome"
+      },
+      {
+        id: 1,
+        name: "Gamified Learning",
+        description: "Microlearning with achievements, streaks, and rewards system",
+        icon: "material-symbols:emoji-events"
+      },
+      {
+        id: 2,
+        name: "Intelligent Feed Algorithm",
+        description: "Personalized content recommendations based on learning patterns",
+        icon: "material-symbols:algorithm"
+      },
+      {
+        id: 3,
+        name: "Interactive Quizzes",
+        description: "Engaging quizzes to reinforce learning and track progress",
+        icon: "material-symbols:quiz"
+      },
+      {
+        id: 4,
+        name: "Cross-Platform",
+        description: "Seamless experience across web, iOS, and Android platforms",
+        icon: "material-symbols:devices"
+      }
+    ]
+  },
+  {
+    id: "16",
+    name: "Podcast Pilot",
+    description: "Comprehensive podcast management platform for launching and managing podcasts. Track episodes, upload files, capture ideas, and monitor analytics across web and mobile.",
+    technologies: [
+      { id: 0, name: "React" },
+      { id: 1, name: "React Native" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "Node.js" },
+      { id: 4, name: "AWS S3" },
+    ],
+    link: "https://github.com/blazinaj/podcast-pilot",
+    icon: "material-symbols:podcast",
+    featured: false,
+    features: [
+      {
+        id: 0,
+        name: "Episode Management",
+        description: "Complete episode tracking, scheduling, and organization tools",
+        icon: "material-symbols:queue-music"
+      },
+      {
+        id: 1,
+        name: "File Upload & Storage",
+        description: "Secure audio file upload with cloud storage integration",
+        icon: "material-symbols:cloud-upload"
+      },
+      {
+        id: 2,
+        name: "Ideas & Planning",
+        description: "Capture and organize podcast ideas and episode outlines",
+        icon: "material-symbols:lightbulb"
+      },
+      {
+        id: 3,
+        name: "Analytics Dashboard",
+        description: "Track listener metrics, engagement, and podcast performance",
+        icon: "material-symbols:dashboard"
+      },
+      {
+        id: 4,
+        name: "Multi-Platform",
+        description: "Available on web, iOS, and Android for on-the-go management",
+        icon: "material-symbols:phone-android"
+      }
+    ]
+  },
+  {
     id: "11",
     name: "Super Quest",
     description: "A browser-based fantasy role-playing game built with React and TypeScript, featuring turn-based combat, inventory management, and an isometric world map.",
