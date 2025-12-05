@@ -11,14 +11,14 @@
     "clean": "rm -rf node_modules && rm -rf package-lock.json"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/roboto": "^5.0.8",
     "@iconify/react": "^4.1.1",
-    "@mui/icons-material": "^5.15.4",
+    "@mui/icons-material": "^5.18.0",
     "@mui/lab": "^5.0.0-alpha.161",
-    "@mui/material": "^5.15.4",
+    "@mui/material": "^5.18.0",
     "framer-motion": "^10.18.0",
     "react": "^18",
     "react-dom": "^18",

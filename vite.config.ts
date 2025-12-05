@@ -12,6 +12,9 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     },
   },
+  optimizeDeps: {
+    include: ['@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled'],
+  },
   server: {
     port: 3030,
     open: true,
