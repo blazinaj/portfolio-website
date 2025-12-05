@@ -13,6 +13,8 @@ export const PROJECTS: Project[] = [
       { id: 4, name: "Material UI" },
     ],
     link: "https://github.com/blazinaj/product-pilot",
+    githubLink: "https://github.com/blazinaj/product-pilot",
+    webLink: "https://productpilot.mobi",
     icon: "material-symbols:rocket-launch",
     featured: true,
     features: [
@@ -107,6 +109,8 @@ export const PROJECTS: Project[] = [
       { id: 4, name: "AWS S3" },
     ],
     link: "https://github.com/blazinaj/podcast-pilot",
+    githubLink: "https://github.com/blazinaj/podcast-pilot",
+    webLink: "https://podpilot.mobi",
     icon: "material-symbols:podcast",
     featured: false,
     features: [
