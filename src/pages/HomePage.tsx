@@ -3,6 +3,7 @@ import { Box, CircularProgress } from '@mui/material';
 import styles from '../styles/Home.module.css';
 import { AboutHero } from '../views/AboutHero';
 import { SkillsList } from '../views/SkillsList';
+import { SkillsShowcase } from '../views/SkillsShowcase';
 import { ProjectsGridView } from '../views/ProjectsGridView';
 import { TechnologiesGrid } from '../views/TechnologiesGrid';
 import { WorkHistoryTimeline } from '../views/WorkHistoryTimeline';
@@ -20,6 +21,7 @@ import TerminalIcon from '@mui/icons-material/Terminal';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
+import CodeIcon from '@mui/icons-material/Code';
 import { Suspense } from 'react';
 import {
   useVisibilityContextState,
@@ -109,6 +111,22 @@ export default function HomePage() {
 
   const pageSections = [
     {
+      id: "skills",
+      title: "Skills",
+      subTitle: "Technologies and tools I use to bring ideas to life",
+      icon: <CodeIcon /> as ReactElement,
+      component: <SkillsShowcase />,
+      href: "#skills",
+    },
+    {
+      id: "projects",
+      title: "Projects",
+      subTitle: "Personal projects that showcase my abilities",
+      icon: <TableViewIcon /> as ReactElement,
+      component: <ProjectsGridView projects={PROJECTS} />,
+      href: "#projects",
+    },
+    {
       id: "work-history",
       title: "Work History",
       subTitle: "Timeline view of my relevant employment history",
@@ -133,14 +151,6 @@ export default function HomePage() {
       href: "#education",
     },
     {
-      id: "projects",
-      title: "Projects",
-      subTitle: "Personal projects that I've worked on in my free time",
-      icon: <TableViewIcon /> as ReactElement,
-      component: <ProjectsGridView projects={PROJECTS} />,
-      href: "#projects",
-    },
-    {
       id: "programming-languages",
       title: "Languages",
       subTitle: "Programming languages that I'm more or less familiar with",
@@ -158,12 +168,12 @@ export default function HomePage() {
       href: "#technologies",
     },
     {
-      id: "skills",
-      title: "Skills",
+      id: "all-skills",
+      title: "All Skills",
       subTitle: "Proficiencies that I've developed over the years",
       icon: <AutoAwesomeIcon /> as ReactElement,
       component: <SkillsList skills={SKILLS} />,
-      href: "#skills",
+      href: "#all-skills",
     },
     {
       id: "hobbies",
